@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import Quotes from "./Quotes";
 
-function App() {
+import { Particles } from "@blackbox-vision/react-particles";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Particles
+        id="simple"
+        width="auto"
+        height="100vh"
+        style={{
+          backgroundColor: "transparent",
+          position: "fixed",
+          top: "0px",
+          bottom: "0px",
+          left: "0px",
+          right: "0px",
+          zIndex: "-1",
+        }}
+        params={{
+          particles: {
+            number: {
+              value: 50,
+            },
+            size: {
+              value: 3,
+            },
+          },
+          interactivity: {
+            events: {
+              onhover: {
+                enable: true,
+                mode: "repulse",
+              },
+            },
+          },
+        }}
+      />
+      <Quotes />
+    </>
   );
-}
+};
 
 export default App;
